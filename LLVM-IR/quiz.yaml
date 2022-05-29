@@ -1,0 +1,41 @@
+title: "LLVM"
+questions:
+  {
+    "What is a toolchain?":
+      [
+        "A set of software tools used to perform some operation.\n",
+        "In a compilers context, it is a set of tools that converts source code to ",
+        "an executable.",
+      ],
+    ? "What is the issue with compiling some language directly to the target architecture?"
+    : [
+        "We have to maintain multiple monolithic compilers for that language.\n",
+        "On top of that, we would have to maintain other source code monolithic compilers.\n",
+        "This becomes highly unmaintainable.",
+      ],
+    ? "What is the advantage of using LLVM to solve the issue of monolithic compilers?"
+    : [
+        "The three stage compiler framework is the main advantage of LLVM.\n",
+        "Developers can convert source code to LLVM IR instead of to the target architecture.\n",
+        "Instead of maintaining monolithic compilers, we can simply maintain frontends.",
+      ],
+    "What is the middleend of LLVM?":
+      ["It is the optimization stage where LLVM IR is optimized to LLVM IR."],
+    "What is the frontend of LLVM?":
+      ["It is the stage where source code is converted to LLVM IR."],
+    "What is the backend of LLVM?":
+      [
+        "It is the stage where LLVM IR is converted to the target architecture.",
+      ],
+    "What is the difference between .ll and .bc?":
+      [
+        ".ll - llvm assembly, human readable\n",
+        ".bc - llvm bitcode, not readable",
+      ],
+    "What is the difference between lli and llc?":
+      [
+        "lli is an LLVM interpreter that executes .ll/.bc code directly.\n",
+        "llc is an LLVM compiler that produces an object file from the .ll/.bc file.",
+      ],
+    "What does clang do?": ["Compiles C programs to .ll"],
+  }
