@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(MyProject)
+project(LLVMIRLab)
 
 set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
@@ -13,12 +13,16 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_BUILD_TYPE Release)
 
+set(CMAKE_EXPORT_COMPILE_COMMANDS YES)
+
 set(VERSION_STRING "0.1.0")
 
 
 set(CMAKE_THREAD_PREFER_PTHREAD TRUE)
 set(THREADS_PREFER_PTHREAD_FLAG TRUE)
 find_package(Threads REQUIRED)
+
+include(${CMAKE_CURRENT_SOURCE_DIR}/cmake/get_llvm.cmake)
 
 # Build the source directory.
 add_subdirectory(
