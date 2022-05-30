@@ -38,4 +38,45 @@ questions:
         "llc is an LLVM compiler that produces an object file from the .ll/.bc file.",
       ],
     "What does clang do?": ["Compiles C programs to .ll"],
+    "Is LLVM IR SSA?": ["Yes."],
+    "Is LLVM IR strongly typed? Are they signed? Are operations signed?":
+      ["Yes. No. Yes."],
+    "Is there a void type in LLVM IR?": ["Yes."],
+    "Does LLVM IR support arbitrary integer types?":
+      ["Yes, for example: i1, i8, i16, i32, i64, i128, i7, i3, i123433, ..."],
+    "Does LLVM IR support arbitrary floating point types?":
+      ["No. We have half (16), float (32), double (64), fp128 (128)"],
+    "Does LLVM IR have pointer types?": ["Yes."],
+    "Does LLVM IR support function pointer types?": ["Yes."],
+    "Does LLVM IR support vector types?": ["Yes."],
+    "What aggregate types does LLVM IR support?": ["Arrays, C structs"],
+    ? "Are basic blocks in LLVM IR explicitly terminated (no fall through)? What are some terminating instructions?"
+    : ["Yes. ret, br, switch, unreachable"],
+    "What is the phi/alloca instruction?":
+      [
+        "phi - choose between multiple incoming values\n",
+        "alloca - creates space on the stack and returns a pointer to that space, it will ",
+        "automatically deallocate when exiting a procedure",
+      ],
+    "What is the load/save instruction in LLVM IR?":
+      [
+        "load - load data from a given pointer\n",
+        "save - save data to the given pointer",
+      ],
+    "How would you get pointers?": ["alloca, Get Element Pointer (GEP)"],
+    "What is Get Element Pointer?":
+      [
+        "It is used to get the address of a subelement of an aggregate. The result is the pointer to the element.\n",
+        "This instruction only performs pointer math. It does not access memory.",
+      ],
+    "Explain extractvalue.":
+      [
+        "It extracts the value at the given location. The result is the value at the location.",
+      ],
+    "Does LLVM IR support type casting?":
+      ["Yes. You can up cast or down cast."],
+    ? "Does LLVM IR support names with periods in them? If so, list some examples."
+    : [
+        "Yes. llvm.memcpy, llvm.cos, llvm.fabs, llvm.sadd.with.overflow.*, etc.",
+      ],
   }
