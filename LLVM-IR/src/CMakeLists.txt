@@ -11,9 +11,11 @@ target_include_directories(my_project PUBLIC
     ${PROJECT_SOURCE_DIR}/include
 )
 
-# TODO
-# target_link_libraries(my_project
-# )
+llvm_map_components_to_libnames(llvm_libs core)
+
+target_link_libraries(my_project
+    ${llvm_libs}
+)
 
 # TODO
 # target_compile_definitions(my_project
